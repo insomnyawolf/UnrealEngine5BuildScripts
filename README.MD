@@ -20,7 +20,7 @@ Call the following code
 Workarounds.BuildVersionWorkaround.ExecuteWorkaround(ModuleDirectory);
 ```
 
-Anywhere on the class that extends from ```ModuleRules``` constructor
+Anywhere on the constructor of the class that extends from ```ModuleRules```
 
 #### Step 3 
 
