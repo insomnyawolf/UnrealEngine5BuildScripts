@@ -20,7 +20,7 @@ Call the following code
 Workarounds.BuildVersionWorkaround.ExecuteWorkaround(Target.ProjectFile.ToNormalizedPath());
 ```
 
-Anywhere on the constructor of all the classes that extends from ``ModuleRules`` or ``TargetRules``
+Anywhere on the constructor of all the classes that extends from ``ModuleRules`` or ``TargetRules`` (look like not all code compilations go trough the same build scripts, this should fix it)
 
 #### Step 3 
 
