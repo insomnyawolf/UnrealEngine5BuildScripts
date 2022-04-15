@@ -1,4 +1,5 @@
-﻿namespace Workarounds
+﻿
+namespace Workarounds
 {
     using System;
     using System.IO;
@@ -14,13 +15,11 @@
 
         public static void ExecuteWorkaround(string path)
         {
-            Console.WriteLine($"Module path => {path}");
+            var rootDirectory = Path.GetDirectoryName(path);
 
-            var projectSourceDir = Directory.GetParent(path);
+            Console.WriteLine($"Module path => {rootDirectory}");
 
-            var projectRoot = projectSourceDir.Parent;
-
-            var targetFixDirectory = Path.Combine(projectRoot.FullName, "Intermediate", "Build");
+            var targetFixDirectory = Path.Combine(rootDirectory, "Intermediate", "Build");
 
             Console.WriteLine($"Fix target path => {targetFixDirectory}");
 

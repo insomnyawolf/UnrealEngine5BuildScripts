@@ -17,10 +17,10 @@ Copy the whole ``Workarounds`` namespace into your ``[name].Build.cs`` file unde
 Call the following code
 
 ```cs
-Workarounds.BuildVersionWorkaround.ExecuteWorkaround(ModuleDirectory);
+Workarounds.BuildVersionWorkaround.ExecuteWorkaround(Target.ProjectFile.ToNormalizedPath());
 ```
 
-Anywhere on the class that extends from ```ModuleRules``` constructor
+Anywhere on the constructor of all the classes that extends from ``ModuleRules`` or ``TargetRules``
 
 #### Step 3 
 
