@@ -22,6 +22,8 @@ Workarounds.BuildVersionWorkaround.ExecuteWorkaround(Target.ProjectFile.ToNormal
 
 Anywhere on the constructor of all the classes that extends from ``ModuleRules`` or ``TargetRules`` (look like not all code compilations go trough the same build scripts, this should fix it)
 
+(it works but i don't know how to make it so it's triggered everytime you request code compilation from the unreal ui)
+
 #### Step 3 
 
 If you had issues with the version 1.2 unssupported they should be fixed automatically so you don't have to worry about them anymore
