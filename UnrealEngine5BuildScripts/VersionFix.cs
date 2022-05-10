@@ -24,7 +24,23 @@ namespace Workarounds
             Console.WriteLine($"Fix target path => {targetFixDirectory}");
 
             SearchFiles(targetFixDirectory);
+            
+            // Credits to mukund-dh => https://github.com/EpicGames/UnrealEngine/pull/9067#issuecomment-1114244797
+            var pluginFixDirectory = Path.Combine(rootDirectory, "Plugins");
 
+            DirectoryInfo pluginInfo = new DirectoryInfo(pluginFixDirectory);
+            if (pluginInfo.Exists)
+            {
+                DirectoryInfo[] plugs = pluginInfo.GetDirectories();
+
+                foreach (DirectoryInfo pl in plugs)
+                {
+                    var plgDir = Path.Combine(pluginFixDirectory, pl.Name, "Intermediate", "Build");
+                    Console.WriteLine($"Fix plugin path => {plgDir}");
+                    SearchFiles(plgDir);
+                }
+            }
+            
             Console.WriteLine($"Everything Done");
         }
 
